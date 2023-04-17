@@ -11,6 +11,7 @@ use App\Models\Product;
 use App\Services\ProductService;
 use Exception;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Validator;
 
 class ProductController extends Controller
 {
@@ -108,7 +109,13 @@ class ProductController extends Controller
     public function changeProductStatus(Request $request)
     {
         try {
-            if (!$request->status) {
+            $validator = Validator::make(
+                $request->all(),
+                [
+                    'status' => 'required'
+                ]
+            );
+            if ($validator->fails()) {
                 return response()->json([
                     "message" => "The status field is required.",
                     "errors" => [
