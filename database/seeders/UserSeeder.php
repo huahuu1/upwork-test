@@ -2,12 +2,12 @@
 
 namespace Database\Seeders;
 
-use App\Models\Catalog;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
-class CatalogSeeder extends Seeder
+class UserSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,11 +15,13 @@ class CatalogSeeder extends Seeder
     public function run(): void
     {
         Schema::disableForeignKeyConstraints();
-        Catalog::truncate();
-        DB::table('catalogs')->insert([
+        User::truncate();
+        DB::table('users')->insert([
             [
-                'name' => 'Catalog 1',
-                'user_id' => 1,
+                'name' => 'User 1',
+                'email' => 'user1@gmail.com',
+                'password' => md5('123456'),
+                'status' => 1,
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s'),
             ],

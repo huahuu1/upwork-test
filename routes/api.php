@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 //Catalog routes
 Route::controller(CatalogController::class)->group(function () {
     //Get catalog by Id
-    Route::get('catalog/{id}', 'getCatalogById');
+    Route::get('catalog/{userId}', 'getCatalogByUserId');
 });
 
 //Product routes

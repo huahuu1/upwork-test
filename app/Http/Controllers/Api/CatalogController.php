@@ -26,10 +26,10 @@ class CatalogController extends Controller
      *
      * @return \Illuminate\Http\JsonResponse
      */
-    public function getCatalogById(Request $request)
+    public function getCatalogByUserId(Request $request)
     {
         return response()->json([
-            'data' => $this->catalogService->getCatalogById($request->id)->all(),
+            'data' => $this->catalogService->getCatalogByUserId($request->userId)->all(),
         ]);
     }
 }

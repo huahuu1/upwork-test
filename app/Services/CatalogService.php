@@ -12,14 +12,14 @@ class CatalogService
      * @param $id
      * @return Catalog
      */
-    public function getCatalogById($id)
+    public function getCatalogByUserId($userId)
     {
         return Catalog::select(
             'id',
-            'name',
+            'name'
         )
         ->with('product')
-        ->where('id', $id)
+        ->where('user_id', $userId)
         ->get();
     }
 }

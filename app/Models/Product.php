@@ -27,4 +27,8 @@ class Product extends Model
         'catalog_id',
         'status',
     ];
+
+    protected $casts = [
+        'image_url' => 'array',
+    ];
 }

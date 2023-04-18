@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use App\Models\Product;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
@@ -24,7 +23,7 @@ class ProductSeeder extends Seeder
                 'cost' => 300,
                 'unit' => 'ml',
                 'weight' => 500,
-                'image_url' => 'https://w7.pngwing.com/pngs/728/915/png-transparent-mineral-water-bottles-mineral-water-bottles-mineral-water-pure-water-thumbnail.png',
+                'image_url' => json_encode(['https://w7.pngwing.com/pngs/728/915/png-transparent-mineral-water-bottles-mineral-water-bottles-mineral-water-pure-water-thumbnail.png', 'https://w7.pngwing.com/pngs/728/915/png-transparent-mineral-water-bottles-mineral-water-bottles-mineral-water-pure-water-thumbnail.png', 'https://w7.pngwing.com/pngs/728/915/png-transparent-mineral-water-bottles-mineral-water-bottles-mineral-water-pure-water-thumbnail.png']),
                 'description' => 'water',
                 'catalog_id' => 1,
                 'created_at' => date('Y-m-d H:i:s'),
